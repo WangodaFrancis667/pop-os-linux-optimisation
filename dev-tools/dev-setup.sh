@@ -1,91 +1,37 @@
 #!/usr/bin/env bash
+# ╔══════════════════════════════════════════════════════════════════════════════╗
+# ║  LEGACY SCRIPT — This file is kept for backwards compatibility.             ║
+# ║                                                                              ║
+# ║  The toolkit has been restructured into interactive, modular scripts.        ║
+# ║  Please use the new entry point instead:                                     ║
+# ║                                                                              ║
+# ║      cd .. && ./install.sh                                                   ║
+# ║                                                                              ║
+# ║  Or run individual modules:                                                  ║
+# ║      ../scripts/dev-setup.sh       Developer tools                           ║
+# ║      ../scripts/ai-setup.sh        AI / ML workstation                       ║
+# ║      ../scripts/gaming-setup.sh    Gaming optimization                       ║
+# ║      ../scripts/robotics-setup.sh  Robotics lab (ROS 2)                      ║
+# ║      ../scripts/ssh-setup.sh       SSH configuration                         ║
+# ║      ../scripts/system-optimize.sh System performance tuning                 ║
+# ╚══════════════════════════════════════════════════════════════════════════════╝
 
-# ----------------------------
-# This installs:
-# Dev stack
-# AI stack
-# Gaming stack
-# Robotics tools
-# System optimizations
-# ----------------------------
+set -euo pipefail
 
-set -e
+SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
+TOOLKIT_ROOT="$(cd "${SCRIPT_DIR}/.." && pwd)"
 
-echo "Pop!_OS Setup Starting..."
+echo ""
+echo "  ⚠  This script has been replaced by the interactive installer."
+echo ""
+echo "  Run the new toolkit:"
+echo "    cd ${TOOLKIT_ROOT} && ./install.sh"
+echo ""
+echo "  Or install everything non-interactively:"
+echo "    cd ${TOOLKIT_ROOT} && ./install.sh --all"
+echo ""
 
-# =========================
-# System update
-# =========================
-sudo apt update && sudo apt upgrade -y
-
-# =========================
-# Core development tools
-# =========================
-sudo apt install -y \
-git curl wget build-essential cmake pkg-config \
-python3-pip python3-venv python3-dev \
-htop neovim tmux unzip zip
-
-# =========================
-# Python data science stack
-# =========================
-pip install --upgrade pip
-pip install numpy pandas matplotlib seaborn jupyterlab
-
-# =========================
-# Your GUI stack (customtkinter projects)
-# =========================
-pip install customtkinter pillow
-
-# =========================
-# AI + ML stack
-# =========================
-pip install torch torchvision torchaudio \
-transformers accelerate datasets sentencepiece
-
-# =========================
-# Computer vision (for robotics)
-# =========================
-pip install opencv-python ultralytics
-
-# =========================
-# Arduino + Embedded tools
-# =========================
-sudo apt install -y arduino arduino-cli platformio
-
-# =========================
-# Gaming stack
-# =========================
-sudo apt install -y steam gamemode mangohud
-
-# =========================
-# Vulkan tools
-# =========================
-sudo apt install -y vulkan-tools
-
-# =========================
-# NVIDIA tools
-# =========================
-sudo apt install -y nvidia-settings nvtop
-
-# =========================
-# Monitoring + thermals
-# =========================
-sudo apt install -y lm-sensors psensor
-
-# =========================
-# SSD health
-# =========================
-sudo systemctl enable fstrim.timer
-
-# =========================
-# zRAM (better multitasking)
-# =========================
-sudo apt install -y zram-tools
-
-# =========================
-# Power performance
-# =========================
-sudo system76-power profile performance
-
-echo "DONE, Your machine is now fully loaded."
+read -rp "  Launch the new installer now? [Y/n] " answer
+if [[ "${answer:-y}" =~ ^[Yy] ]]; then
+    exec bash "${TOOLKIT_ROOT}/install.sh"
+fi
