@@ -223,7 +223,7 @@ If no output, IOMMU may need to be enabled in BIOS (Intel VT-d).
 
 ### Step 3: Enable IOMMU Boot Parameter
 
-> **⚠️ Pop!\_OS uses systemd-boot, not GRUB.** Use `kernelstub`, not `update-grub`.
+> ** Pop!\_OS uses systemd-boot, not GRUB.** Use `kernelstub`, not `update-grub`.
 
 ```bash
 # Intel CPU — use intel_iommu
