@@ -19,7 +19,7 @@ optimizing Pop!\_OS for development, AI/ML, gaming, and robotics workloads.
 
 ---
 
-## ⚡ Quick Start
+## Quick Start
 
 ```bash
 # Clone the repository
@@ -46,7 +46,7 @@ The installer will **automatically detect your hardware** (CPU, GPU, RAM, laptop
 
 ---
 
-## 📦 Modules
+## Modules
 
 | Module | Description | Script |
 |--------|-------------|--------|
@@ -61,7 +61,7 @@ Each module presents an **interactive checklist** where you select exactly which
 
 ---
 
-## 🖥 Reference Hardware
+## Reference Hardware
 
 This toolkit is developed and tested on a **Lenovo ThinkPad P-Series workstation laptop** running Pop!\_OS. Hardware detection adapts recommendations automatically for other machines.
 
@@ -110,7 +110,7 @@ Optimized via TRIM scheduling and I/O tuning (see System Optimization module).
 
 ---
 
-## 🗂 Project Structure
+## Project Structure
 
 ```
 pop-os-linux-optimisation/
@@ -137,7 +137,7 @@ pop-os-linux-optimisation/
 
 ---
 
-## 🔧 Recommended Configurations
+## Recommended Configurations
 
 ### Daily Workstation
 
@@ -182,7 +182,7 @@ Usage:   Steam + Proton, GameMode + MangoHud
 
 ---
 
-## 📖 Documentation
+## Documentation
 
 Detailed guides for each module:
 
@@ -192,7 +192,7 @@ Detailed guides for each module:
 
 ---
 
-## ⚠️ Pop!\_OS Specific Notes
+## Pop!\_OS Specific Notes
 
 This toolkit is designed specifically for **Pop!\_OS 22.04 LTS** and accounts for its differences from standard Ubuntu:
 
